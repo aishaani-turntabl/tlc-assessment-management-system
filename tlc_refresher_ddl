@@ -1,0 +1,39 @@
+drop schema TLCProgram cascade;
+
+create schema if not exists TLCProgram;
+
+
+drop table if exists TLCProgram.Students;
+drop table if exists TLCProgram.Assessments;
+drop table if exists TLCProgram.Student_Assessments;
+
+
+create table TLCProgram.Students 
+(
+	student_id integer not null primary key,
+	first_name varchar(255) not null,
+	last_name varchar(255) not null,
+	email_address varchar(40) not null
+);
+
+create table TLCProgram.Assessments
+(
+	assessment_id integer not null primary key,
+	assessment_name varchar(255) not null,
+	assessment_description varchar(255)
+);
+
+create table TLCProgram.Student_Assessments
+(
+	student_id integer not null,
+	assessment_id integer not null,
+	assessment_date date not null,
+	assessment_grade varchar(1),
+	assessment_score numeric,
+	primary key (student_id, assessment_id, assessment_date),
+	foreign key (student_id) references TLCProgram.Students(student_id),
+	foreign key (assessment_id) references TLCProgram.Assessments(assessment_id)
+);
+
+
+
