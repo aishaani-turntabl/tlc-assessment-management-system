@@ -1,4 +1,4 @@
-# tlc-assessment-management-system
+# Database Refresher Labs
 
 1. Run the tlcAssessmentManagement.txt script to create the tables and insert data for this exercise: https://github.com/aishaani-turntabl/tlc-assessment-management-system/blob/main/tlcAssessmentManagement.txt
 
